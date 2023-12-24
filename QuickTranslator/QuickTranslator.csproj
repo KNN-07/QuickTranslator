@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -8,7 +8,8 @@
     <RootNamespace>QuickTranslator</RootNamespace>
     <AssemblyName>QuickTranslator</AssemblyName>
     <StartupObject>QuickTranslator.Program</StartupObject>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,24 +32,39 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="QuickTranslator\" />
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="QuickTranslator\Configuration.cs" />
-    <Compile Include="QuickTranslator\ConfigurationPanel.cs" />
-    <Compile Include="QuickTranslator\DocumentPanel.cs" />
-    <Compile Include="QuickTranslator\ExportToWordForm.cs" />
-    <Compile Include="QuickTranslator\FindAndReplaceForm.cs" />
-    <Compile Include="QuickTranslator\MainForm.cs" />
-    <Compile Include="QuickTranslator\PostTTVForm.cs" />
+    <Compile Include="QuickTranslator\ConfigurationPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuickTranslator\DocumentPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuickTranslator\ExportToWordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuickTranslator\FindAndReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuickTranslator\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuickTranslator\PostTTVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="QuickTranslator\PostTTVFormSettings.cs" />
     <Compile Include="QuickTranslator\Program.cs" />
-    <Compile Include="QuickTranslator\ScrollingRichTextBox.cs" />
+    <Compile Include="QuickTranslator\ScrollingRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="QuickTranslator\Shortcuts.cs" />
-    <Compile Include="QuickTranslator\UpdatePhienAmForm.cs" />
-    <Compile Include="QuickTranslator\UpdateVietPhraseForm.cs" />
+    <Compile Include="QuickTranslator\UpdatePhienAmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuickTranslator\UpdateVietPhraseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -66,6 +82,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Resources\QuickTranslator.ConfigurationPanel.resources" />
     <None Include="Resources\QuickTranslator.UpdateVietPhraseForm.resources" />
   </ItemGroup>
